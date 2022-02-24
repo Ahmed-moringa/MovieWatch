@@ -22,6 +22,4 @@ urlpatterns = [
     path('setmovie/', include('movie.urls')),
     path('admin/', admin.site.urls),
     path('user/', include('movie_user.urls')),
-]
-if settings.DEBUG is True:
-       urlpatterns = urlpatterns + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
