@@ -11,6 +11,4 @@ urlpatterns = [
     path('setmovie/', views.SetMovies.as_view(), name='setmovie'),
     path('adminlogin/', views.LoiginAdmin.as_view(), name='adminlogin'),
     path('logout/', views.adminLogout, name='logout'),
-]
-
-urlpatterns = urlpatterns + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
