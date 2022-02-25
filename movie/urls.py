@@ -9,6 +9,6 @@ urlpatterns = [
     path('dashboard/', views.Dashboard.as_view(), name='dashboard'),
     path('addmovie/', views.AddMovies.as_view(), name='addmovie'),
     path('setmovie/', views.SetMovies.as_view(), name='setmovie'),
-    path('adminlogin/', views.LoiginAdmin.as_view(), name='adminlogin'),
+    path('', views.LoiginAdmin.as_view(), name='adminlogin'),
     path('logout/', views.adminLogout, name='logout'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

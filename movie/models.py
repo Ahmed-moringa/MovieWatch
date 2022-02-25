@@ -10,7 +10,7 @@ class AdminSide(models.Model):
 
 class MovieMaster(models.Model):
     m_name = models.CharField('Movie Name',max_length=50)
-    m_desc = models.CharField('Movie Description', max_length=50)
+    m_desc = models.CharField('Movie Description', max_length=250)
     m_image = models.ImageField('Movie Image',upload_to="pics/")
 
     class Meta:

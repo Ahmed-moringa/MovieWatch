@@ -13,13 +13,13 @@ import os
 from pathlib import Path
 from decouple import config,Csv
 import dj_database_url
-
+import django_heroku
 
 MODE=config("MODE", default="dev")
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-STATIC_DIR = os.path.join(BASE_DIR,'static')
+
 
 ADMIN_TEMPLATE_DIR = os.path.join(BASE_DIR,'movie/templates')
 USER_TEMPLATE_DIR = os.path.join(BASE_DIR, 'movie_user/templates')
@@ -79,7 +79,11 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'mysite.wsgi.application'
 
-
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': config('CLOUD_NAME'),
+    'API_KEY': config('CLOUD_KEY'),
+    'API_SECRET': config('CLOUD_SECRET'),
+}
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 if config('MODE')=="dev":
@@ -143,7 +147,7 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 MEDIA_URL = '/media/'
-
+STATIC_DIR = os.path.join(BASE_DIR,'static')
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 STATICFILES_DIRS = [
@@ -155,3 +159,4 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'assets')
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+django_heroku.settings(locals())

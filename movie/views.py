@@ -42,13 +42,11 @@ def adminLogout(request):
     logout(request)
     return redirect('../login/')
 
-
-##########ADmin dashboard page##########
+#Admin dashboard page
 class Dashboard(generic.ListView):
     model_add = models.MovieMaster
     model_set = models.SetMovie
     movies = MovieMaster.objects.filter(setmovie__isnull=False).distinct()
-    # context_object_name = 'moviesss'
     model = MovieMaster
 
     template_name = "movie/dashboard.html"
@@ -60,15 +58,14 @@ class Dashboard(generic.ListView):
         return context
 
 
-########This page will be used by admin for adding movies to system when then will be used for setting shows####################
+#This page will be used by admin for adding movies to system when then will be used for setting shows####################
 class AddMovies(generic.CreateView):  
     form_class = forms.AddMovieForm
     model = models.MovieMaster
     template_name = "movie/addmovies.html"
-    # fields = '__all__'
 
     
-    ###############From the list of movies added admin can set show for particular movie############################
+#From the list of movies added admin can set show for particular movie
 class SetMovies(generic.CreateView):
     form_class = forms.SetMovieForm
     model = models.SetMovie

@@ -20,11 +20,11 @@
 <div class="container">
     <img src="{{movies.m_image.url}}" alt="" style="height: 400px; width: 600px; border: 5px solid #555;">
     <br>
-    <h1 style="font-weight: bold; font-style: unset; font-stretch:wider;">{{movies.m_name}}</h1>
+    <h1 style="font-weight: bold; font-style: unset; font-stretch:wider;"> Movie: {{movies.m_name}}</h1>
     
     <div>
             {% for data in data_set %}
-        <div class="jumbotron" style="background-color:lightblue;">
+        <div class="jumbotron" style="background-color:rgb(255, 255, 255);">
 
                 <form method="POST">
 
@@ -63,7 +63,7 @@
                         {% endif %}
                         <br>
                         <label for="">Cost:</label>
-                        <input type="text" readonly class="form-control" style="width: 100px; font-size: large; border-width: 5px;font-weight: bold; border-color: #555;" value="{{data.price}}/-">
+                        <input type="text" readonly class="form-control" style="width: 100px; font-size: large;font-weight: bold;" value="{{data.price}}/-">
                     <!-- <label for="">Cost:</label> <p style="font-weight: bold;">{{data.price}}</p> -->
 
                         <input type="date" required class="form-control" id="" style="width:140px;" name="datee">

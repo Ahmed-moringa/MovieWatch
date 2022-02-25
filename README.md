@@ -3,15 +3,21 @@
 >[Ahmed Mohamed](https://github.com/Ahmed-moringa)  
   
 # Description  
-
+An application that allows an admin to create movies with date,price and seats available and a user to purchase a ticket for a certain movie and number of seats.
 
 ## Screenshots 
 ###### Home page
- 
+
+[![moviewatch.png](https://i.postimg.cc/7hkRYJsb/moviewatch.png)](https://postimg.cc/YGdRd0ww)
 
 ## User Story  
   
-
+* View available movies and their details
+* Add a movie with date and price
+* Purchase tickets of listed movies
+* Search for movies
+* Download tickets
+* View booking history
   
 ## Setup and Installation  
 To get the project .......  
@@ -60,7 +66,7 @@ Open the application on your browser `127.0.0.1:8000`.
   
   
 ## Known Bugs  
-* There are no known bugs currently but pull requests are allowed incase you spot a bug  
+* Problem with setting dates 
   
 ## Contact Information   
 If you have any question or contributions, please email me at [ahmed.mohamed@student.moringaschool.com]  
